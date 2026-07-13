@@ -2,7 +2,7 @@ import type { NavItem } from "@/lib/types";
 
 export const siteConfig = {
   name: "NESI Week",
-  fullName: "Nigeria Electricity Week (NESI Week) 2026",
+  fullName: "NESI (Nigeria Electricity Supply Industry) Week 2026",
   tagline: "Powering the Future",
   pillars: ["Innovation", "Investment", "Collaboration", "Industry Excellence"],
   description:

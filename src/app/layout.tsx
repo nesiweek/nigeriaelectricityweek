@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NESI Week 2026 | Coming Soon",
+  title: "NESI Week 2026 | Powering the Future",
   description:
     "Nigeria Electricity Week (NESI Week) 2026 — 15–22 November, Abuja, Nigeria.",
 };

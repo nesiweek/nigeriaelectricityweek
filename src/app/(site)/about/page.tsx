@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <Container className="py-24">
+    <Container className="pb-24 pt-32">
       <SectionHeading
         eyebrow="About"
         title="About Nigeria Electricity Week"

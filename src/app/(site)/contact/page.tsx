@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Container className="py-24">
+    <Container className="pb-24 pt-32">
       <SectionHeading
         eyebrow="Contact"
         title="We'd Love to Hear From You"
