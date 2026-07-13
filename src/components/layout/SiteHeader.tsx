@@ -35,7 +35,7 @@ export function SiteHeader() {
           : "bg-navy/55 py-5 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-[5vw]">
+      <div className="px-page mx-auto flex max-w-[1240px] items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5">
           <Logo size={40} />
           <span className="flex flex-col leading-tight">
@@ -112,7 +112,7 @@ export function SiteHeader() {
 
       {isMenuOpen && (
         <nav
-          className="flex flex-col gap-1 bg-navy px-[5vw] pb-6 pt-4 sm:hidden"
+          className="px-page flex flex-col gap-1 bg-navy pb-6 pt-4 sm:hidden"
           aria-label="Mobile"
         >
           {navItems.map((item) => (

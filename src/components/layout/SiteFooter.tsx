@@ -3,7 +3,7 @@ import { contactInfo, siteConfig } from "@/data/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-navy/10 bg-navy-deep text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-[5vw] py-8 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+      <div className="px-page mx-auto flex max-w-[1240px] flex-col gap-3 py-8 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
         <span>
           &copy; {new Date().getFullYear()} {siteConfig.organiser}. All
           rights reserved.
