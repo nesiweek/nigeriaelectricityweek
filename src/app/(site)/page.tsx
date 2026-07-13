@@ -6,6 +6,7 @@ import { WhyAttend } from "@/components/sections/WhyAttend";
 import { FeaturedExperiences } from "@/components/sections/FeaturedExperiences";
 import { WhyPartner } from "@/components/sections/WhyPartner";
 import { RegistrationCta } from "@/components/sections/RegistrationCta";
+import { PartnersMarquee } from "@/components/sections/PartnersMarquee";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <FeaturedExperiences />
       <WhyPartner />
       <RegistrationCta />
+      <PartnersMarquee />
     </>
   );
 }
