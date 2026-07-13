@@ -8,7 +8,7 @@ import {
   LearnIcon,
 } from "@/components/ui/icons";
 import { whyAttendItems, type WhyAttendIcon } from "@/data/why-attend";
-import { cn } from "@/lib/utils";
+import { chunk, cn } from "@/lib/utils";
 
 const iconMap: Record<WhyAttendIcon, typeof ConnectIcon> = {
   connect: ConnectIcon,
@@ -20,14 +20,6 @@ const iconMap: Record<WhyAttendIcon, typeof ConnectIcon> = {
 };
 
 const ROW_SIZE = 3;
-
-function chunk<T>(items: T[], size: number): T[][] {
-  const rows: T[][] = [];
-  for (let i = 0; i < items.length; i += size) {
-    rows.push(items.slice(i, i + size));
-  }
-  return rows;
-}
 
 export function WhyAttend() {
   const rows = chunk(whyAttendItems, ROW_SIZE);
