@@ -7,6 +7,7 @@ import { FeaturedExperiences } from "@/components/sections/FeaturedExperiences";
 import { WhyPartner } from "@/components/sections/WhyPartner";
 import { RegistrationCta } from "@/components/sections/RegistrationCta";
 import { PartnersMarquee } from "@/components/sections/PartnersMarquee";
+import { Newsletter } from "@/components/sections/Newsletter";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <WhyPartner />
       <RegistrationCta />
       <PartnersMarquee />
+      <Newsletter />
     </>
   );
 }
