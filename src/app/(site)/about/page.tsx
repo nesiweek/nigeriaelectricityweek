@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/sections/PageHero";
+import { AboutStory } from "@/components/sections/AboutStory";
+import { MissionVision } from "@/components/sections/MissionVision";
 
 export const metadata: Metadata = {
   title: "About | NESI Week 2026",
@@ -10,12 +11,15 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <Container className="pb-24 pt-32">
-      <SectionHeading
-        eyebrow="About"
+    <>
+      <PageHero
         title="About Nigeria Electricity Week"
-        description="Page content in progress."
+        description="Nigeria Electricity Week (NESI Week) is Nigeria's premier annual electricity and energy ecosystem platform established to drive collaboration, innovation, investment and sustainable growth across the Nigerian Electricity Supply Industry."
+        image="/images/hero/fre-sonneveld-q6n8nIrDQHE-unsplash.jpg"
+        imageAlt="Solar panels under a bright sky"
       />
-    </Container>
+      <AboutStory />
+      <MissionVision />
+    </>
   );
 }

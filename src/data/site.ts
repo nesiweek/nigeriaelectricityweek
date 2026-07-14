@@ -15,10 +15,14 @@ export const siteConfig = {
 };
 
 export const contactInfo = {
+  secretariat: "Nigeria Electricity Week Secretariat",
+  organiser: "NESI Platform Limited",
   generalEmail: "info@nigeriaelectricityweek.com",
+  platformEmail: "info@nesiplatform.com",
   partnershipsEmail: "partnerships@nigeriaelectricityweek.com",
-  mediaEmail: "media@nigeriaelectricityweek.com",
+  // mediaEmail: "media@nigeriaelectricityweek.com",
   phone: "+234 902 718 2860",
+  website: "www.nigeriaelectricityweek.com",
   addressLines: [
     "2nd Floor, 21 Blantyre Crescent",
     "Beside Barcelona Hotels",
@@ -31,4 +35,22 @@ export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+];
+
+export const footerCtaLinks: NavItem[] = [
+  { label: "Register Now", href: "/contact" },
+  { label: "Partner With Us", href: "/contact" },
+  // { label: "Join Innovation Challenge", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+export type SocialLink = {
+  label: string;
+  href: string;
+};
+
+export const socialLinks: SocialLink[] = [
+  { label: "LinkedIn", href: "#" },
+  { label: "X (Twitter)", href: "#" },
+  { label: "Instagram", href: "#" },
 ];

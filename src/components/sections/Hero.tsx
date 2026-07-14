@@ -55,7 +55,7 @@ export function Hero() {
           Powering the <span className="text-gold">Future</span>
         </h1>
 
-        <p className="flex max-w-[46ch] flex-wrap items-center gap-x-2 gap-y-1 text-[clamp(15px,1.8vw,20px)] font-light text-white/90">
+        <p className="flex max-w-[56ch] flex-wrap items-center gap-x-2 gap-y-1 text-[clamp(15px,1.8vw,20px)] font-light text-white/90">
           {siteConfig.pillars.map((pillar, i) => (
             <span key={pillar} className="flex items-center gap-2">
               {pillar}
@@ -70,12 +70,12 @@ export function Hero() {
           <HeroMeta
             icon="calendar"
             value={siteConfig.eventDates}
-            label="Eight days of programming"
+            label=""
           />
           <HeroMeta
             icon="pin"
             value={siteConfig.eventLocation}
-            label="International Conference Centre"
+            label=""
           />
         </div>
 

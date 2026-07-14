@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Logo from "@/components/Logo";
+import { ScrollProgressBar } from "@/components/layout/ScrollProgressBar";
 import { Button } from "@/components/ui/Button";
 import { navItems, siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -134,6 +135,8 @@ export function SiteHeader() {
           </Button>
         </nav>
       )}
+
+      <ScrollProgressBar />
     </header>
   );
 }
