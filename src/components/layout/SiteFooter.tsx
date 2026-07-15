@@ -20,7 +20,7 @@ export function SiteFooter() {
     <footer className="border-t-2 border-gold bg-navy-deep text-white">
       <div className="px-page mx-auto max-w-[1240px] py-[clamp(3.5rem,7vw,5rem)]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          <div>
+          <div className="min-w-0">
             <Link href="/" className="flex items-center gap-2.5">
               <Logo size={36} />
               <span className="flex flex-col leading-tight">
@@ -67,13 +67,13 @@ export function SiteFooter() {
                 </p>
                 <a
                   href={`mailto:${contactInfo.generalEmail}`}
-                  className="block text-white/75 transition-colors hover:text-gold"
+                  className="block break-words text-white/75 transition-colors hover:text-gold"
                 >
                   {contactInfo.generalEmail}
                 </a>
                 <a
                   href={`mailto:${contactInfo.platformEmail}`}
-                  className="block text-white/75 transition-colors hover:text-gold"
+                  className="block break-words text-white/75 transition-colors hover:text-gold"
                 >
                   {contactInfo.platformEmail}
                 </a>
@@ -85,7 +85,7 @@ export function SiteFooter() {
                 </p>
                 <a
                   href={siteConfig.url}
-                  className="text-white/75 transition-colors hover:text-gold"
+                  className="break-words text-white/75 transition-colors hover:text-gold"
                 >
                   {contactInfo.website}
                 </a>

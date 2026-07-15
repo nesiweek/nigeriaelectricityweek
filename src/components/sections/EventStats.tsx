@@ -22,9 +22,9 @@ export function EventStats() {
           {eventStats.map((stat) => (
             <div
               key={stat.label}
-              className="bg-navy-deep px-4 py-10 text-center transition-colors duration-300 hover:bg-white/[0.06]"
+              className="min-w-0 bg-navy-deep px-3 py-10 text-center transition-colors duration-300 hover:bg-white/[0.06] sm:px-4"
             >
-              <div className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold text-gold">
+              <div className="text-[clamp(1.5rem,6vw,3rem)] font-extrabold text-gold">
                 <StatCounter value={stat.value} />
               </div>
               <p className="mt-2.5 text-sm font-medium tracking-wide text-white/75">

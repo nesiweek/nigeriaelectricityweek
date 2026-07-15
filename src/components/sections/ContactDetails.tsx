@@ -32,7 +32,7 @@ const details = [
     content: (
       <a
         href={`mailto:${contactInfo.generalEmail}`}
-        className="transition-colors hover:text-blue"
+        className="break-words transition-colors hover:text-blue"
       >
         {contactInfo.generalEmail}
       </a>
@@ -44,7 +44,7 @@ const details = [
     content: (
       <a
         href={`mailto:${contactInfo.partnershipsEmail}`}
-        className="transition-colors hover:text-blue"
+        className="break-words transition-colors hover:text-blue"
       >
         {contactInfo.partnershipsEmail}
       </a>
@@ -66,7 +66,7 @@ export function ContactDetails() {
 
         <div className="grid divide-y divide-slate-200 border-y-2 border-gold bg-white sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
           {details.map((detail) => (
-            <div key={detail.label} className="px-6 py-8">
+            <div key={detail.label} className="min-w-0 px-6 py-8">
               <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-gold">
                 <detail.icon width={16} height={16} />
                 {detail.label}
