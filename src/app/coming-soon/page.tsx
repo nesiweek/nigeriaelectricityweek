@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Logo from "@/components/Logo";
 import Countdown from "@/components/Countdown";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "NESI Week 2026 | Coming Soon",
+  description:
+    "Nigeria Electricity Week (NESI Week) 2026 — 15–22 November, Abuja, Nigeria.",
+};
+
+export default function ComingSoonPage() {
   return (
     <div className="relative flex h-dvh w-full flex-col overflow-hidden bg-navy-deep">
       {/* Ambient background */}
@@ -15,7 +22,6 @@ export default function Home() {
             NESI Week
           </span>
         </div>
-       
       </header>
 
       <main className="relative z-10 flex min-h-0 flex-1 items-center justify-center px-[6vw] text-center">
@@ -59,8 +65,6 @@ export default function Home() {
         </svg>
 
         <div className="relative z-10 w-full max-w-[880px]">
-         
-
           <h1 className="mb-[clamp(10px,1.8vh,16px)] text-[clamp(30px,6vw,64px)] font-extrabold leading-[1.08] tracking-tight text-white [animation:fade-up_0.7s_ease_0.08s_both]">
             NESI WEEK
             <br />
@@ -96,7 +100,6 @@ export default function Home() {
       <footer className="relative z-10 flex shrink-0 flex-col items-center gap-1.5 border-t border-white/[0.07] px-[5vw] py-[clamp(10px,2vh,24px)] text-center text-[11px] text-white/35 sm:flex-row sm:justify-between sm:text-[12.5px]">
         <span>&copy; 2026 NESI Platform Limited. All rights reserved.</span>
         <span className="flex flex-col gap-1 sm:flex-row sm:gap-4">
-       
           <a
             href="tel:+2348037987223"
             className="transition-colors hover:text-gold"

@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NESI Week 2026 | Coming Soon",
+  title: "NESI Week 2026 | Powering the Future",
   description:
     "Nigeria Electricity Week (NESI Week) 2026 — 15–22 November, Abuja, Nigeria.",
 };
@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
