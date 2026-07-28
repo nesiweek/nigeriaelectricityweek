@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ export function Newsletter() {
   return (
     <section className="bg-navy-deep py-[clamp(4.5rem,8vw,8rem)] text-white">
       <Container className="grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.1fr_1fr]">
-        <div>
+        <Reveal>
           <span className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-gold-light">
             <span className="h-[2px] w-7 bg-gold" />
             Newsletter
@@ -30,9 +31,9 @@ export function Newsletter() {
             Receive exclusive event updates, speaker announcements,
             registration information and industry insights.
           </p>
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal delay={200}>
           {submitted ? (
             <p className="text-sm font-semibold text-gold-light">
               Thanks for subscribing — you&apos;re on the list.
@@ -55,7 +56,7 @@ export function Newsletter() {
               </Button>
             </form>
           )}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

@@ -31,9 +31,24 @@ export const contactInfo = {
   ],
 };
 
+export const registrationDays = [
+  { id: "day-1", label: "Day 1 — National Energy Dialogue" },
+  { id: "day-2", label: "Day 2 — CEO & Policy Forum" },
+  { id: "day-3", label: "Day 3 — NESI Expo" },
+  { id: "day-4", label: "Day 4 — NESI Innovation Challenge" },
+  { id: "day-5", label: "Day 5 — NESI Power League" },
+  { id: "day-6", label: "Day 6 — NESI Energy Marathon" },
+  { id: "day-7", label: "Day 7 — Dinner with NESI" },
+  { id: "day-8", label: "Day 8 — NESI Awards" },
+  { id: "full-week", label: "Full Week" },
+];
+
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Register", href: "/#register" },
+  { label: "Partner With Us", href: "/#partner" },
+  { label: "Exhibition", href: "/exhibition" },
   { label: "Contact", href: "/contact" },
 ];
 

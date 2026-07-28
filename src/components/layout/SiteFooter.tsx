@@ -22,7 +22,7 @@ export function SiteFooter() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div className="min-w-0">
             <Link href="/" className="flex items-center gap-2.5">
-              <Logo size={36} />
+              <Logo size={60} />
               <span className="flex flex-col leading-tight">
                 <span className="text-[1.05rem] font-extrabold tracking-wide text-white">
                   {siteConfig.name}

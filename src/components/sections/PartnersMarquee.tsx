@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { partnerLogos } from "@/data/partners";
 
 const REPEATS_PER_LAP = 4;
@@ -12,7 +13,7 @@ export function PartnersMarquee() {
   return (
     <section className="bg-white py-[clamp(4.5rem,8vw,8rem)]">
       <Container>
-        <div className="mx-auto mb-[clamp(2.5rem,5vw,3.5rem)] max-w-xl text-center">
+        <Reveal className="mx-auto mb-[clamp(2.5rem,5vw,3.5rem)] max-w-xl text-center">
           <span className="mb-4 inline-flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-blue">
             <span className="h-[2px] w-7 bg-gold" />
             Our Partners
@@ -21,7 +22,7 @@ export function PartnersMarquee() {
             Strategic Partnerships Are at the Heart of Nigeria Electricity
             Week
           </h2>
-        </div>
+        </Reveal>
       </Container>
 
       <div className="relative overflow-hidden border-y border-slate-200 py-5 [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">

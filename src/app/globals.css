@@ -20,7 +20,6 @@
 
 html,
 body {
-  height: 100%;
   overflow-x: hidden;
 }
 
@@ -66,6 +65,26 @@ body {
 
 .px-page {
   padding-inline: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(64px);
+  transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .bg-grid {

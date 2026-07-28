@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function EventOverview() {
   return (
     <section className="bg-white py-[clamp(4.5rem,8vw,8rem)]">
       <Container className="grid items-center gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
+        <Reveal>
           <span className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-blue">
             <span className="h-[2px] w-7 bg-gold" />
             About NESI Week
@@ -30,9 +31,12 @@ export function EventOverview() {
               innovation showcases, sports, wellness and recognition.
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]">
+        <Reveal
+          delay={220}
+          className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]"
+        >
           <Image
             src="/images/hero/Cover_electricite.jpg"
             alt="Electricity substation infrastructure"
@@ -59,7 +63,7 @@ export function EventOverview() {
               </span>
             </div>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
