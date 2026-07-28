@@ -52,6 +52,9 @@ export function Hero() {
         </span>
 
         <h1 className="mb-[clamp(14px,2.5vh,28px)] text-[clamp(32px,6.5vw,72px)] font-extrabold leading-[1.06] tracking-tight">
+          <span className="block text-[clamp(13px,1.4vw,16px)] font-semibold uppercase tracking-[0.1em] text-white/80">
+            Event Theme:
+          </span>
           Powering the <span className="text-gold">Future</span>
         </h1>
 

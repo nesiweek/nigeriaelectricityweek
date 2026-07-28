@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { partnerBenefits } from "@/data/why-partner";
 
 export function WhyPartner() {
@@ -8,9 +9,12 @@ export function WhyPartner() {
   const rightItems = partnerBenefits.slice(half);
 
   return (
-    <section className="bg-navy-deep py-[clamp(4.5rem,8vw,8rem)]">
+    <section
+      id="partner"
+      className="scroll-mt-24 bg-navy-deep py-[clamp(4.5rem,8vw,8rem)] sm:scroll-mt-28"
+    >
       <Container className="grid items-center gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[1fr_1.1fr]">
-        <div>
+        <Reveal>
           <span className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-gold-light">
             <span className="h-[2px] w-7 bg-gold" />
             Why Partner with NESI Week?
@@ -30,12 +34,12 @@ export function WhyPartner() {
           <Button href="/contact" variant="primary">
             Become a Founding Partner
           </Button>
-        </div>
+        </Reveal>
 
-        <div className="grid gap-x-10 sm:grid-cols-2">
+        <Reveal delay={200} className="grid gap-x-10 sm:grid-cols-2">
           <PartnerBenefitList items={leftItems} />
           <PartnerBenefitList items={rightItems} />
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

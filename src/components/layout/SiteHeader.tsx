@@ -38,7 +38,7 @@ export function SiteHeader() {
     >
       <div className="px-page mx-auto flex max-w-[1240px] items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <Logo size={40} />
+          <Logo size={56} />
           <span className="flex flex-col leading-tight">
             <span className="text-[1.05rem] font-extrabold tracking-wide text-white">
               {siteConfig.name}
@@ -49,9 +49,10 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-10 sm:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Primary">
           {navItems.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive =
+              !item.href.includes("#") && pathname === item.href;
             return (
               <Link
                 key={item.href}
@@ -77,7 +78,7 @@ export function SiteHeader() {
           <Button
             href="/contact"
             variant="primary"
-            className="hidden sm:inline-flex"
+            className="hidden lg:inline-flex"
           >
             Register Interest
           </Button>
@@ -87,7 +88,7 @@ export function SiteHeader() {
             onClick={() => setIsMenuOpen((open) => !open)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
-            className="relative h-5 w-7 sm:hidden"
+            className="relative h-5 w-7 lg:hidden"
           >
             <span
               className={cn(
@@ -113,7 +114,7 @@ export function SiteHeader() {
 
       {isMenuOpen && (
         <nav
-          className="px-page flex flex-col gap-1 bg-navy pb-6 pt-4 sm:hidden"
+          className="px-page flex flex-col gap-1 bg-navy pb-6 pt-4 lg:hidden"
           aria-label="Mobile"
         >
           {navItems.map((item) => (
@@ -122,7 +123,7 @@ export function SiteHeader() {
               href={item.href}
               className={cn(
                 "rounded-md px-3 py-3 text-sm font-semibold",
-                pathname === item.href
+                !item.href.includes("#") && pathname === item.href
                   ? "bg-white/10 text-white"
                   : "text-white/80",
               )}

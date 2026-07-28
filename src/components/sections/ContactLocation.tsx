@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { PinIcon } from "@/components/ui/icons";
 import { contactInfo } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -18,7 +19,7 @@ export function ContactLocation() {
   return (
     <section className="bg-white py-[clamp(4.5rem,8vw,8rem)]">
       <Container className="grid items-center gap-[clamp(2.5rem,5vw,4rem)] lg:grid-cols-2">
-        <div>
+        <Reveal>
           <span className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-blue">
             <span className="h-[2px] w-7 bg-gold" />
             Location
@@ -41,9 +42,12 @@ export function ContactLocation() {
           >
             Get Directions
           </Button>
-        </div>
+        </Reveal>
 
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line shadow-[0_40px_70px_-35px_rgba(16,42,67,0.35)]">
+        <Reveal
+          delay={220}
+          className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line shadow-[0_40px_70px_-35px_rgba(16,42,67,0.35)]"
+        >
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-mist px-6 text-center">
             <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-blue shadow-sm">
               <PinIcon width={22} height={22} />
@@ -67,7 +71,7 @@ export function ContactLocation() {
               mapLoaded ? "opacity-100" : "opacity-0",
             )}
           />
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

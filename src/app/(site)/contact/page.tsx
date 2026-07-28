@@ -10,7 +10,13 @@ export const metadata: Metadata = {
     "Get in touch with the Nigeria Electricity Week (NESI Week) Secretariat.",
 };
 
-export default function ContactPage() {
+type ContactPageProps = {
+  searchParams: Promise<{ subject?: string }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const { subject } = await searchParams;
+
   return (
     <>
       <PageHero
@@ -20,7 +26,7 @@ export default function ContactPage() {
         imageAlt="Electricity substation infrastructure"
       />
       <ContactDetails />
-      <ContactForm />
+      <ContactForm initialSubject={subject} />
       <ContactLocation />
     </>
   );

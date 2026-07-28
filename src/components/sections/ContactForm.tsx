@@ -3,12 +3,13 @@
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { contactInfo } from "@/data/site";
+import { Reveal } from "@/components/ui/Reveal";
+import { contactInfo, registrationDays } from "@/data/site";
 
 const subjects = [
   "Delegate Registration",
   "Sponsorship Opportunities",
-  "Exhibition Enquiry",
+  "Exhibitor Registration",
   "Media Accreditation",
   "General Information",
 ];
@@ -16,8 +17,30 @@ const subjects = [
 const inputStyles =
   "w-full rounded-[4px] border border-line bg-off-white px-4 py-3 text-sm text-navy placeholder:text-slate-400 focus:border-blue focus:bg-white focus:outline-none";
 
-export function ContactForm() {
+const dayValues = registrationDays
+  .filter((day) => day.id !== "full-week")
+  .map((day) => day.label);
+
+type ContactFormProps = {
+  initialSubject?: string;
+};
+
+export function ContactForm({ initialSubject }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [selectedDays, setSelectedDays] = useState<string[]>([]);
+  const isFullWeek = dayValues.every((label) => selectedDays.includes(label));
+
+  function toggleDay(label: string) {
+    setSelectedDays((prev) =>
+      prev.includes(label)
+        ? prev.filter((item) => item !== label)
+        : [...prev, label],
+    );
+  }
+
+  function toggleFullWeek() {
+    setSelectedDays(isFullWeek ? [] : dayValues);
+  }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -27,7 +50,7 @@ export function ContactForm() {
   return (
     <section className="bg-off-white py-[clamp(4.5rem,8vw,8rem)]">
       <Container className="grid gap-[clamp(2.5rem,5vw,4rem)] lg:grid-cols-[0.85fr_1.15fr]">
-        <div>
+        <Reveal>
           <h2 className="mb-5 text-[clamp(1.9rem,3.4vw,2.75rem)] font-extrabold leading-[1.15] tracking-tight text-navy">
             Send Us a Message
           </h2>
@@ -45,9 +68,9 @@ export function ContactForm() {
               {contactInfo.generalEmail}
             </a>
           </p>
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal delay={200}>
           {submitted ? (
             <p className="rounded-[4px] border border-line bg-white px-5 py-4 text-sm font-semibold text-navy">
               Thanks for reaching out — the Secretariat will be in touch
@@ -55,13 +78,42 @@ export function ContactForm() {
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="grid gap-5">
+              <div>
+                <label
+                  htmlFor="contactSubject"
+                  className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.06em] text-slate-600"
+                >
+                  Subject
+                </label>
+                <select
+                  id="contactSubject"
+                  name="subject"
+                  required
+                  defaultValue={
+                    initialSubject && subjects.includes(initialSubject)
+                      ? initialSubject
+                      : ""
+                  }
+                  className={inputStyles}
+                >
+                  <option value="" disabled>
+                    Select a subject
+                  </option>
+                  {subjects.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label
                     htmlFor="contactName"
                     className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.06em] text-slate-600"
                   >
-                    Your Name
+                    Full Name
                   </label>
                   <input
                     id="contactName"
@@ -88,30 +140,96 @@ export function ContactForm() {
                 </div>
               </div>
 
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label
+                    htmlFor="contactPhone"
+                    className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.06em] text-slate-600"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    id="contactPhone"
+                    name="phone"
+                    type="tel"
+                    required
+                    className={inputStyles}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contactOrganisation"
+                    className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.06em] text-slate-600"
+                  >
+                    Organisation / Company
+                  </label>
+                  <input
+                    id="contactOrganisation"
+                    name="organisation"
+                    type="text"
+                    required
+                    className={inputStyles}
+                  />
+                </div>
+              </div>
+
               <div>
                 <label
-                  htmlFor="contactSubject"
+                  htmlFor="contactJobTitle"
                   className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.06em] text-slate-600"
                 >
-                  Subject
+                  Job Title / Designation
                 </label>
-                <select
-                  id="contactSubject"
-                  name="subject"
+                <input
+                  id="contactJobTitle"
+                  name="jobTitle"
+                  type="text"
                   required
-                  defaultValue=""
                   className={inputStyles}
-                >
-                  <option value="" disabled>
-                    Select a subject
-                  </option>
-                  {subjects.map((subject) => (
-                    <option key={subject} value={subject}>
-                      {subject}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
+
+              <fieldset>
+                <legend className="mb-2 block text-xs font-semibold uppercase tracking-[0.06em] text-slate-600">
+                  Day(s) Attending{" "}
+                  <span className="font-normal normal-case text-slate-400">
+                    (optional)
+                  </span>
+                </legend>
+                <div className="grid grid-cols-1 gap-x-4 gap-y-2 rounded-[4px] border border-line bg-off-white p-4 sm:grid-cols-2">
+                  {registrationDays.map((day) =>
+                    day.id === "full-week" ? (
+                      <label
+                        key={day.id}
+                        className="flex items-center gap-2 text-sm font-semibold text-navy"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={isFullWeek}
+                          onChange={toggleFullWeek}
+                          className="h-4 w-4 rounded-sm border-line text-blue focus:ring-blue"
+                        />
+                        {day.label}
+                      </label>
+                    ) : (
+                      <label
+                        key={day.id}
+                        className="flex items-center gap-2 text-sm text-navy"
+                      >
+                        <input
+                          type="checkbox"
+                          name="daysAttending"
+                          value={day.label}
+                          checked={selectedDays.includes(day.label)}
+                          onChange={() => toggleDay(day.label)}
+                          className="h-4 w-4 rounded-sm border-line text-blue focus:ring-blue"
+                        />
+                        {day.label}
+                      </label>
+                    ),
+                  )}
+                </div>
+              </fieldset>
 
               <div>
                 <label
@@ -134,7 +252,7 @@ export function ContactForm() {
               </Button>
             </form>
           )}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
