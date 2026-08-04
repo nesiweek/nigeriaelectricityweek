@@ -28,21 +28,19 @@ export function PartnerSponsorship() {
               <h3 className="mb-6 text-xl font-bold text-white">
                 Founding Partners of NESI Week 2026
               </h3>
-              <div className="grid flex-1 grid-cols-2 gap-4 sm:gap-5">
+              <div className="grid grid-cols-3 gap-3">
                 {foundingSponsors.map((sponsor) => (
                   <div
                     key={sponsor.src}
-                    className="flex items-center justify-center rounded-xl border border-white/10 bg-white p-6 sm:p-8"
+                    className="flex h-20 items-center justify-center rounded-lg bg-white px-4"
                   >
-                    <div className="relative h-14 w-full sm:h-16">
-                      <Image
-                        src={sponsor.src}
-                        alt={sponsor.alt}
-                        fill
-                        sizes="(min-width: 1024px) 20vw, 40vw"
-                        className="object-contain"
-                      />
-                    </div>
+                    <Image
+                      src={sponsor.src}
+                      alt={sponsor.alt}
+                      width={160}
+                      height={64}
+                      className="h-8 w-full object-contain"
+                    />
                   </div>
                 ))}
               </div>

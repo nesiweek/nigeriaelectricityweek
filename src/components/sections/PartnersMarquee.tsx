@@ -25,19 +25,19 @@ export function PartnersMarquee() {
         </Reveal>
       </Container>
 
-      <div className="relative overflow-hidden border-y border-slate-200 py-5 [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex w-max animate-marquee gap-12 has-[>div:hover]:[animation-play-state:paused]">
+      <div className="relative overflow-hidden border-y border-slate-200 py-8 [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+        <div className="flex w-max animate-marquee items-center gap-16 has-[>div:hover]:[animation-play-state:paused]">
           {track.map((logo, i) => (
             <div
               key={`${logo.src}-${i}`}
-              className="relative h-11 w-28 flex-shrink-0"
+              className="flex-shrink-0 transition-transform duration-300 hover:scale-105"
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                fill
-                sizes="112px"
-                className="object-contain opacity-55 grayscale transition duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0"
+                width={200}
+                height={96}
+                className="h-11 w-auto object-contain"
               />
             </div>
           ))}

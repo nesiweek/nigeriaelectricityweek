@@ -7,12 +7,18 @@ import {
   siteConfig,
   socialLinks,
 } from "@/data/site";
-import { InstagramIcon, LinkedInIcon, XIcon } from "@/components/ui/icons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  XIcon,
+} from "@/components/ui/icons";
 
 const socialIcons = {
   LinkedIn: LinkedInIcon,
   "X (Twitter)": XIcon,
   Instagram: InstagramIcon,
+  Facebook: FacebookIcon,
 } as const;
 
 export function SiteFooter() {
@@ -140,6 +146,8 @@ export function SiteFooter() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
                     className="grid h-10 w-10 place-items-center rounded-full border border-white/20 text-white/75 transition-colors hover:border-gold hover:text-gold"
                   >

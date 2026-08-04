@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 type ButtonVariant = "primary" | "outline" | "navy";
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[4px] px-8 py-3.5 text-[0.92rem] font-bold tracking-tight transition-all duration-300";
+  "inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[4px] px-8 py-3.5 text-[0.92rem] font-bold tracking-tight transition-all duration-300 disabled:pointer-events-none disabled:opacity-60";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
