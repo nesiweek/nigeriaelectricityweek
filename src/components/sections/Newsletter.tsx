@@ -7,11 +7,30 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">(
+    "idle",
+  );
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
+
+      setStatus("done");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -34,7 +53,7 @@ export function Newsletter() {
         </Reveal>
 
         <Reveal delay={200}>
-          {submitted ? (
+          {status === "done" ? (
             <p className="text-sm font-semibold text-gold-light">
               Thanks for subscribing — you&apos;re on the list.
             </p>
@@ -51,10 +70,19 @@ export function Newsletter() {
                 placeholder="Email Address"
                 className="w-full flex-1 rounded-[4px] border border-white/20 bg-white/[0.06] px-4 py-3.5 text-sm text-white placeholder:text-white/45 focus:border-gold focus:bg-white/10 focus:outline-none"
               />
-              <Button type="submit" variant="primary">
-                Subscribe
+              <Button
+                type="submit"
+                variant="primary"
+                disabled={status === "loading"}
+              >
+                {status === "loading" ? "Subscribing…" : "Subscribe"}
               </Button>
             </form>
+          )}
+          {status === "error" && (
+            <p className="mt-3 text-sm font-semibold text-red-400">
+              Something went wrong. Please try again.
+            </p>
           )}
         </Reveal>
       </Container>

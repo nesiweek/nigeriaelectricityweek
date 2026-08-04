@@ -65,7 +65,11 @@ export type SocialLink = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { label: "LinkedIn", href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/nesi-week/" },
   { label: "X (Twitter)", href: "#" },
-  { label: "Instagram", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/nesi_week/" },
+  {
+    label: "Facebook",
+    href: "https://web.facebook.com/profile.php?id=61591843900072",
+  },
 ];

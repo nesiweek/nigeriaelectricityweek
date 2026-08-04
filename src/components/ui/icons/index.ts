@@ -9,6 +9,7 @@ export { CelebrateIcon } from "./CelebrateIcon";
 export { LinkedInIcon } from "./LinkedInIcon";
 export { XIcon } from "./XIcon";
 export { InstagramIcon } from "./InstagramIcon";
+export { FacebookIcon } from "./FacebookIcon";
 export { PhoneIcon } from "./PhoneIcon";
 export { MailIcon } from "./MailIcon";
 export { ChevronUpIcon } from "./ChevronUpIcon";
