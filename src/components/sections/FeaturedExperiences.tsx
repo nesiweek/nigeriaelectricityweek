@@ -92,7 +92,7 @@ export function FeaturedExperiences() {
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="absolute inset-x-3 bottom-3">
-                        <h3 className="text-sm font-extrabold leading-tight text-white sm:text-base">
+                        <h3 className="text-[13px] font-extrabold leading-tight text-white sm:text-sm">
                           {experience.title}
                         </h3>
                         <span className="mt-1 inline-block text-[11px] font-semibold uppercase tracking-[0.15em] text-gold-light">
@@ -109,7 +109,7 @@ export function FeaturedExperiences() {
                       className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-2xl bg-navy p-3 text-left [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-4"
                     >
                       <div>
-                        <h3 className="text-xs font-extrabold leading-tight text-gold sm:text-base">
+                        <h3 className="text-xs font-extrabold leading-tight text-gold sm:text-sm">
                           {experience.title}
                         </h3>
                         <p className="mt-1.5 text-[0.68rem] font-light leading-[1.5] text-white/85 sm:mt-2.5 sm:text-[0.85rem]">
