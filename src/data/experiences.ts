@@ -69,7 +69,7 @@ export const featuredExperiences: Experience[] = [
     description:
       "Where Energy Meets Sport. Bringing the energy ecosystem together through the NESI Power League, NESI Energy Marathon and other sporting experiences that promote wellness, teamwork and industry collaboration.",
     status: "coming-soon",
-    image: "/images/experiences/marathon.jpg",
+    image: "/images/experiences/games.jpg",
   },
   {
     slug: "future-energy-experience",
@@ -77,7 +77,7 @@ export const featuredExperiences: Experience[] = [
     description:
       "Experience the Future of Energy. Africa's premier immersive electricity and energy showcase featuring cutting-edge technologies, smart infrastructure, AI, clean energy, electric mobility and the future of power.",
     status: "coming-soon",
-    image: "/images/hero/fre-sonneveld-q6n8nIrDQHE-unsplash.jpg",
+    image: "/images/experiences/energy.jpg",
   },
   {
     slug: "innovation-arena",
@@ -85,7 +85,7 @@ export const featuredExperiences: Experience[] = [
     description:
       "Where Innovation Takes Centre Stage. A world-class live technology launch platform where companies unveil groundbreaking products and solutions before government, investors, industry leaders and the media.",
     status: "coming-soon",
-    image: "/images/hero/american-public-power-association-VuR4oHZ3ucc-unsplash.jpg",
+    image: "/images/experiences/innovation-exp.jpg",
   },
   {
     slug: "power-concert",
@@ -93,6 +93,6 @@ export const featuredExperiences: Experience[] = [
     description:
       "Celebrating the Human Side of Energy. An unforgettable evening of music, entertainment and celebration, bringing together delegates, partners and industry leaders to close NESI Week in style.",
     status: "coming-soon",
-    image: "/images/experiences/dinner.jpg",
+    image: "/images/experiences/concert.jpg",
   },
 ];
