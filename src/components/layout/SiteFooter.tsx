@@ -11,12 +11,12 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
-  XIcon,
+  // XIcon,
 } from "@/components/ui/icons";
 
 const socialIcons = {
   LinkedIn: LinkedInIcon,
-  "X (Twitter)": XIcon,
+  // "X (Twitter)": XIcon,
   Instagram: InstagramIcon,
   Facebook: FacebookIcon,
 } as const;

@@ -66,7 +66,7 @@ export type SocialLink = {
 
 export const socialLinks: SocialLink[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/nesi-week/" },
-  { label: "X (Twitter)", href: "#" },
+  // { label: "X (Twitter)", href: "#" },
   { label: "Instagram", href: "https://www.instagram.com/nesi_week/" },
   {
     label: "Facebook",

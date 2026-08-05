@@ -7,15 +7,21 @@ import { Reveal } from "@/components/ui/Reveal";
 import { contactInfo, registrationDays } from "@/data/site";
 
 const subjects = [
-  "Delegate Registration",
+  "Registration",
   "Sponsorship Opportunities",
   "Exhibitor Registration",
-  "Media Accreditation",
+  "Partner With us",
   "General Information",
 ];
 
 const inputStyles =
   "w-full rounded-[4px] border border-line bg-off-white px-4 py-3 text-sm text-navy placeholder:text-slate-400 focus:border-blue focus:bg-white focus:outline-none";
+
+const errorInputStyles =
+  "w-full rounded-[4px] border border-red-500 bg-off-white px-4 py-3 text-sm text-navy placeholder:text-slate-400 focus:border-red-500 focus:bg-white focus:outline-none";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_RE = /^[+]?[\d\s-]{7,20}$/;
 
 const dayValues = registrationDays
   .filter((day) => day.id !== "full-week")
@@ -26,11 +32,21 @@ type ContactFormProps = {
 };
 
 export function ContactForm({ initialSubject }: ContactFormProps) {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">(
+    "idle",
+  );
+  const [subject, setSubject] = useState(
+    initialSubject && subjects.includes(initialSubject) ? initialSubject : "",
+  );
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
+  const [daysError, setDaysError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
   const isFullWeek = dayValues.every((label) => selectedDays.includes(label));
+  const isRegistration = subject === "Registration";
 
   function toggleDay(label: string) {
+    setDaysError(false);
     setSelectedDays((prev) =>
       prev.includes(label)
         ? prev.filter((item) => item !== label)
@@ -39,12 +55,54 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
   }
 
   function toggleFullWeek() {
+    setDaysError(false);
     setSelectedDays(isFullWeek ? [] : dayValues);
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+
+    const formData = new FormData(event.currentTarget);
+    const email = String(formData.get("email") || "");
+    const phone = String(formData.get("phone") || "");
+
+    const nextEmailError = !EMAIL_RE.test(email);
+    const nextPhoneError = !PHONE_RE.test(phone);
+    const nextDaysError = isRegistration && selectedDays.length === 0;
+
+    setEmailError(nextEmailError);
+    setPhoneError(nextPhoneError);
+    setDaysError(nextDaysError);
+
+    if (nextEmailError || nextPhoneError || nextDaysError) return;
+
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: formData.get("subject"),
+          name: formData.get("name"),
+          email,
+          phone,
+          organisation: formData.get("organisation"),
+          jobTitle: formData.get("jobTitle"),
+          daysAttending: selectedDays,
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
+
+      setStatus("done");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -71,7 +129,7 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
         </Reveal>
 
         <Reveal delay={200}>
-          {submitted ? (
+          {status === "done" ? (
             <p className="rounded-[4px] border border-line bg-white px-5 py-4 text-sm font-semibold text-navy">
               Thanks for reaching out — the Secretariat will be in touch
               shortly.
@@ -89,11 +147,8 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
                   id="contactSubject"
                   name="subject"
                   required
-                  defaultValue={
-                    initialSubject && subjects.includes(initialSubject)
-                      ? initialSubject
-                      : ""
-                  }
+                  value={subject}
+                  onChange={(event) => setSubject(event.target.value)}
                   className={inputStyles}
                 >
                   <option value="" disabled>
@@ -135,8 +190,16 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
                     name="email"
                     type="email"
                     required
-                    className={inputStyles}
+                    pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                    title="Enter a valid email address"
+                    onChange={() => setEmailError(false)}
+                    className={emailError ? errorInputStyles : inputStyles}
                   />
+                  {emailError && (
+                    <p className="mt-1.5 text-sm font-semibold text-red-600">
+                      Enter a valid email address.
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -153,8 +216,16 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
                     name="phone"
                     type="tel"
                     required
-                    className={inputStyles}
+                    pattern="[+]?[\d\s\-]{7,20}"
+                    title="Enter a valid phone number (7–20 digits, may include + and spaces)"
+                    onChange={() => setPhoneError(false)}
+                    className={phoneError ? errorInputStyles : inputStyles}
                   />
+                  {phoneError && (
+                    <p className="mt-1.5 text-sm font-semibold text-red-600">
+                      Enter a valid phone number (7–20 digits).
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -193,10 +264,14 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
                 <legend className="mb-2 block text-xs font-semibold uppercase tracking-[0.06em] text-slate-600">
                   Day(s) Attending{" "}
                   <span className="font-normal normal-case text-slate-400">
-                    (optional)
+                    {isRegistration ? "(required)" : "(optional)"}
                   </span>
                 </legend>
-                <div className="grid grid-cols-1 gap-x-4 gap-y-2 rounded-[4px] border border-line bg-off-white p-4 sm:grid-cols-2">
+                <div
+                  className={`grid grid-cols-1 gap-x-4 gap-y-2 rounded-[4px] border bg-off-white p-4 sm:grid-cols-2 ${
+                    daysError ? "border-red-500" : "border-line"
+                  }`}
+                >
                   {registrationDays.map((day) =>
                     day.id === "full-week" ? (
                       <label
@@ -229,6 +304,11 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
                     ),
                   )}
                 </div>
+                {daysError && (
+                  <p className="mt-1.5 text-sm font-semibold text-red-600">
+                    Select at least one day you are attending.
+                  </p>
+                )}
               </fieldset>
 
               <div>
@@ -247,9 +327,20 @@ export function ContactForm({ initialSubject }: ContactFormProps) {
                 />
               </div>
 
-              <Button type="submit" variant="navy" className="w-fit">
-                Send Message
+              <Button
+                type="submit"
+                variant="navy"
+                className="w-fit"
+                disabled={status === "loading"}
+              >
+                {status === "loading" ? "Sending…" : "Send Message"}
               </Button>
+
+              {status === "error" && (
+                <p className="text-sm font-semibold text-red-600">
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </form>
           )}
         </Reveal>
