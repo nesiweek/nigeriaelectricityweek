@@ -77,7 +77,7 @@ export const featuredExperiences: Experience[] = [
     description:
       "Experience the Future of Energy. Africa's premier immersive electricity and energy showcase featuring cutting-edge technologies, smart infrastructure, AI, clean energy, electric mobility and the future of power.",
     status: "coming-soon",
-    image: "/images/experiences/energy.jpg",
+    image: "/images/experiences/future-energy.jpeg",
   },
   {
     slug: "innovation-arena",
