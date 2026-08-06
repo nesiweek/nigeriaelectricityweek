@@ -18,7 +18,7 @@ export const contactInfo = {
   secretariat: "Nigeria Electricity Week Secretariat",
   organiser: "NESI Platform Limited",
   generalEmail: "info@nigeriaelectricityweek.com",
-  platformEmail: "info@nesiplatform.com",
+  // platformEmail: "info@nesiplatform.com",
   partnershipsEmail: "partnerships@nigeriaelectricityweek.com",
   // mediaEmail: "media@nigeriaelectricityweek.com",
   phone: "+234 902 718 2860",

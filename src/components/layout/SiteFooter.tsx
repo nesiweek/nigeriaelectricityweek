@@ -78,10 +78,10 @@ export function SiteFooter() {
                   {contactInfo.generalEmail}
                 </a>
                 <a
-                  href={`mailto:${contactInfo.platformEmail}`}
+                  href={`mailto:${contactInfo.partnershipsEmail}`}
                   className="block break-words text-white/75 transition-colors hover:text-gold"
                 >
-                  {contactInfo.platformEmail}
+                  {contactInfo.partnershipsEmail}
                 </a>
               </div>
 
