@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { ExhibitorInfo } from "@/components/sections/ExhibitorInfo";
 
+const title = "Exhibition | NESI Week 2026";
+const description =
+  "Exhibitor information and registration for Nigeria Electricity Week (NESI Week) 2026.";
+const ogImage = "/images/hero/Cover_electricite.jpg";
+
 export const metadata: Metadata = {
-  title: "Exhibition | NESI Week 2026",
-  description:
-    "Exhibitor information and registration for Nigeria Electricity Week (NESI Week) 2026.",
+  title,
+  description,
+  openGraph: { title, description, images: [ogImage] },
+  twitter: { title, description, images: [ogImage] },
 };
 
 export default function ExhibitionPage() {

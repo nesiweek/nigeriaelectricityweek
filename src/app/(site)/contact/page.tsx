@@ -4,10 +4,16 @@ import { ContactDetails } from "@/components/sections/ContactDetails";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { ContactLocation } from "@/components/sections/ContactLocation";
 
+const title = "Contact | NESI Week 2026";
+const description =
+  "Get in touch with the Nigeria Electricity Week (NESI Week) Secretariat.";
+const ogImage = "/images/hero/Cover_electricite.jpg";
+
 export const metadata: Metadata = {
-  title: "Contact | NESI Week 2026",
-  description:
-    "Get in touch with the Nigeria Electricity Week (NESI Week) Secretariat.",
+  title,
+  description,
+  openGraph: { title, description, images: [ogImage] },
+  twitter: { title, description, images: [ogImage] },
 };
 
 type ContactPageProps = {

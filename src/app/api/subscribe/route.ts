@@ -1,4 +1,5 @@
 import { contactInfo } from "@/data/site";
+import { getClientIp, rateLimit } from "@/lib/rate-limit";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const NOTIFY_EMAIL = process.env.SUBSCRIBER_NOTIFY_EMAIL || contactInfo.generalEmail;
@@ -29,6 +30,17 @@ async function notifyNewSubscriber(email: string) {
 }
 
 export async function POST(request: Request) {
+  const { success } = rateLimit(`subscribe:${getClientIp(request)}`, {
+    limit: 5,
+    windowMs: 10 * 60 * 1000,
+  });
+  if (!success) {
+    return Response.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 },
+    );
+  }
+
   const { email } = await request.json();
 
   if (!email || typeof email !== "string" || !EMAIL_RE.test(email)) {

@@ -1,4 +1,5 @@
 import { contactInfo } from "@/data/site";
+import { getClientIp, rateLimit } from "@/lib/rate-limit";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+]?[\d\s-]{7,20}$/;
@@ -28,6 +29,17 @@ function renderRow(label: string, value?: string | null) {
 }
 
 export async function POST(request: Request) {
+  const { success } = rateLimit(`contact:${getClientIp(request)}`, {
+    limit: 5,
+    windowMs: 10 * 60 * 1000,
+  });
+  if (!success) {
+    return Response.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 },
+    );
+  }
+
   const body: ContactPayload = await request.json();
   const { subject, name, email, phone, organisation, jobTitle, daysAttending, message } = body;
 

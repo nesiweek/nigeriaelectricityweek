@@ -3,10 +3,16 @@ import { PageHero } from "@/components/sections/PageHero";
 import { AboutStory } from "@/components/sections/AboutStory";
 import { MissionVision } from "@/components/sections/MissionVision";
 
+const title = "About | NESI Week 2026";
+const description =
+  "About Nigeria Electricity Week (NESI Week) — Nigeria's premier annual electricity and energy ecosystem platform.";
+const ogImage = "/images/hero/fre-sonneveld-q6n8nIrDQHE-unsplash.jpg";
+
 export const metadata: Metadata = {
-  title: "About | NESI Week 2026",
-  description:
-    "About Nigeria Electricity Week (NESI Week) — Nigeria's premier annual electricity and energy ecosystem platform.",
+  title,
+  description,
+  openGraph: { title, description, images: [ogImage] },
+  twitter: { title, description, images: [ogImage] },
 };
 
 export default function AboutPage() {

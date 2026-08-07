@@ -25,9 +25,13 @@ export default function Countdown() {
   const [time, setTime] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
-    setTime(getTimeLeft());
-    const id = setInterval(() => setTime(getTimeLeft()), 1000);
-    return () => clearInterval(id);
+    const update = () => setTime(getTimeLeft());
+    const id = setInterval(update, 1000);
+    const initial = setTimeout(update, 0);
+    return () => {
+      clearInterval(id);
+      clearTimeout(initial);
+    };
   }, []);
 
   const units: { label: string; value: number | undefined }[] = [
