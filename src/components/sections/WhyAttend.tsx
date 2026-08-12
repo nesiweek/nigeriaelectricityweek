@@ -1,23 +1,7 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import {
-  CelebrateIcon,
-  CollaborateIcon,
-  ConnectIcon,
-  InnovateIcon,
-  InvestIcon,
-  LearnIcon,
-} from "@/components/ui/icons";
-import { whyAttendItems, type WhyAttendIcon } from "@/data/why-attend";
-
-const iconMap: Record<WhyAttendIcon, typeof ConnectIcon> = {
-  connect: ConnectIcon,
-  learn: LearnIcon,
-  invest: InvestIcon,
-  innovate: InnovateIcon,
-  collaborate: CollaborateIcon,
-  celebrate: CelebrateIcon,
-};
+import { whyAttendItems } from "@/data/why-attend";
 
 export function WhyAttend() {
   return (
@@ -34,30 +18,33 @@ export function WhyAttend() {
         </Reveal>
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {whyAttendItems.map((item, index) => {
-            const Icon = iconMap[item.icon];
-            return (
-              <Reveal key={item.title} delay={index * 130}>
-                <div className="group relative flex h-full flex-col items-center gap-4 rounded-2xl border border-slate-200 bg-off-white px-4 py-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lg">
-                  <span className="absolute right-3 top-3 text-xs font-extrabold text-slate-300 group-hover:text-gold">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+          {whyAttendItems.map((item, index) => (
+            <Reveal key={item.title} delay={index * 130}>
+              <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-[0_20px_40px_-25px_rgba(16,42,67,0.6)]">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/25 to-navy-deep/10" />
 
-                  <span className="grid h-16 w-16 place-items-center rounded-full bg-navy text-gold-light transition-colors duration-300 group-hover:bg-gold group-hover:text-navy">
-                    <Icon width={26} height={26} />
-                  </span>
+                <span className="absolute right-3 top-3 text-xs font-extrabold text-white/50">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-                  <h3 className="text-base font-extrabold uppercase tracking-wide text-navy">
+                <div className="absolute inset-x-3 bottom-3 sm:inset-x-4 sm:bottom-4">
+                  <h3 className="text-sm font-extrabold uppercase tracking-wide text-gold sm:text-base">
                     {item.title}
                   </h3>
-
-                  <p className="text-xs font-medium leading-snug text-slate-500">
+                  <p className="mt-1 text-[11px] font-medium leading-snug text-white/85 sm:text-xs">
                     {item.description}
                   </p>
                 </div>
-              </Reveal>
-            );
-          })}
+              </div>
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>

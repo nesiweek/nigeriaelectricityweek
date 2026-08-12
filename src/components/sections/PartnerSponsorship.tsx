@@ -21,7 +21,7 @@ export function PartnerSponsorship() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Pioneer / Founding Sponsors recognition */}
           <Reveal>
-            <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+            <div className="flex h-full flex-col rounded-2xl p-6 sm:p-8">
               <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[0.2em] text-gold">
                 Pioneer Sponsors
               </span>
@@ -32,14 +32,14 @@ export function PartnerSponsorship() {
                 {foundingSponsors.map((sponsor) => (
                   <div
                     key={sponsor.src}
-                    className="flex h-20 items-center justify-center rounded-lg bg-white px-4"
+                    className="flex items-center justify-center rounded-lg bg-white px-3 py-4"
                   >
                     <Image
                       src={sponsor.src}
                       alt={sponsor.alt}
-                      width={160}
+                      width={260}
                       height={64}
-                      className="h-8 w-full object-contain"
+                      className="h-16 w-full object-contain"
                     />
                   </div>
                 ))}

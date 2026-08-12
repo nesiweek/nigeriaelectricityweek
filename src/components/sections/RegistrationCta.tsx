@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -6,8 +7,16 @@ export function RegistrationCta() {
   return (
     <section
       id="register"
-      className="relative scroll-mt-24 overflow-hidden bg-[linear-gradient(135deg,#0072ce_0%,#102a43_65%)] py-[clamp(4rem,7vw,6rem)] text-center text-white sm:scroll-mt-28"
+      className="relative scroll-mt-24 overflow-hidden py-[clamp(4rem,7vw,6rem)] text-center text-white sm:scroll-mt-28"
     >
+      <Image
+        src="/images/hero/nikola-johnny-mirkovic-Z_dnvde5wxc-unsplash.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(0,114,206,0.88)_0%,rgba(16,42,67,0.94)_65%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12),transparent_60%)]" />
 
       <Container className="relative max-w-2xl">

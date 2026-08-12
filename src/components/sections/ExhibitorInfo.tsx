@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -24,19 +25,61 @@ export function ExhibitorInfo() {
           </h2>
         </Reveal>
 
-        <div className="mx-auto max-w-3xl divide-y divide-slate-200 border-t-2 border-gold">
-          {valueProps.map((text, index) => (
-            <Reveal key={text} delay={index * 130}>
-              <div className="flex gap-6 py-8 sm:gap-10">
-                <span className="flex-shrink-0 text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold leading-none text-slate-200">
-                  {String(index + 1).padStart(2, "0")}
+        <div className="grid items-start gap-[clamp(2.5rem,5vw,4rem)] lg:grid-cols-[0.9fr_1.1fr]">
+          <Reveal className="grid gap-4 lg:sticky lg:top-28">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]">
+              <Image
+                src="/images/exhibition/exhibition.jpg"
+                alt="Exhibitor showcasing technology to attendees at NESI Week"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
+              <div className="absolute inset-x-6 bottom-6 text-white">
+                <strong className="block text-2xl font-extrabold">
+                  Product Discovery
+                </strong>
+                <span className="text-xs uppercase tracking-[0.1em] text-white/75">
+                  To Commercial Engagement
                 </span>
-                <p className="pt-1 text-[1.05rem] font-light leading-[1.8] text-slate-600">
-                  {text}
-                </p>
               </div>
-            </Reveal>
-          ))}
+            </div>
+
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]">
+              <Image
+                src="/images/exhibition/exhibition2.jpg"
+                alt="Exhibitors and attendees networking at NESI Week"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover object-[70%_20%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
+              <div className="absolute inset-x-6 bottom-6 text-white">
+                <strong className="block text-2xl font-extrabold">
+                  Industry Networking
+                </strong>
+                <span className="text-xs uppercase tracking-[0.1em] text-white/75">
+                  Decision-Makers, In Person
+                </span>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="divide-y divide-slate-200 border-t-2 border-gold">
+            {valueProps.map((text, index) => (
+              <Reveal key={text} delay={index * 130}>
+                <div className="flex gap-6 py-8 sm:gap-10">
+                  <span className="flex-shrink-0 text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold leading-none text-slate-200">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="pt-1 text-[1.05rem] font-light leading-[1.8] text-slate-600">
+                    {text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
 
         <Reveal delay={320} className="mt-10 text-center">

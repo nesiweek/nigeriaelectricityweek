@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -34,8 +35,17 @@ export function Newsletter() {
   }
 
   return (
-    <section className="bg-navy-deep py-[clamp(4.5rem,8vw,8rem)] text-white">
-      <Container className="grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.1fr_1fr]">
+    <section className="relative overflow-hidden bg-navy-deep py-[clamp(4.5rem,8vw,8rem)] text-white">
+      <Image
+        src="/images/hero/Cover_electricite.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-20"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/75" />
+
+      <Container className="relative grid items-center gap-[clamp(2rem,5vw,4rem)] lg:grid-cols-[1.1fr_1fr]">
         <Reveal>
           <span className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-gold-light">
             <span className="h-[2px] w-7 bg-gold" />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,9 +12,18 @@ export function WhyPartner() {
   return (
     <section
       id="partner"
-      className="scroll-mt-24 bg-navy-deep py-[clamp(4.5rem,8vw,8rem)] sm:scroll-mt-28"
+      className="relative scroll-mt-24 overflow-hidden bg-navy-deep py-[clamp(4.5rem,8vw,8rem)] sm:scroll-mt-28"
     >
-      <Container className="grid items-center gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[1fr_1.1fr]">
+      <Image
+        src="/images/hero/fre-sonneveld-q6n8nIrDQHE-unsplash.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-25"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/70" />
+
+      <Container className="relative grid items-center gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[1fr_1.1fr]">
         <Reveal>
           <span className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-gold-light">
             <span className="h-[2px] w-7 bg-gold" />
