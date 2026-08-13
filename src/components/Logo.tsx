@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export default function Logo({ size = 54 }: { size?: number }) {
+export default function Logo({ size = 84 }: { size?: number }) {
     return (
         <Image
-            src="/nesi-logo-navy.jpeg"
+            src="/nesiweek-logo.png"
             alt="NESI Week logo"
             width={size}
             height={size}
