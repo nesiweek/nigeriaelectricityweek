@@ -41,6 +41,7 @@ export function EventOverview() {
             src="/images/hero/Cover_electricite.jpg"
             alt="Electricity substation infrastructure"
             fill
+            loading="eager"
             sizes="(min-width: 1024px) 40vw, 100vw"
             className="object-cover"
           />

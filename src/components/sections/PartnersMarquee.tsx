@@ -37,7 +37,8 @@ export function PartnersMarquee() {
                 alt={logo.alt}
                 width={200}
                 height={96}
-                className="h-11 w-auto object-contain"
+                style={{ height: "44px", width: "auto" }}
+                className="object-contain"
               />
             </div>
           ))}

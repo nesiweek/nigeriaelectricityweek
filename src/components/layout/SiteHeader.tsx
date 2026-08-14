@@ -38,15 +38,15 @@ export function SiteHeader() {
     >
       <div className="px-page mx-auto flex max-w-[1240px] items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <Logo size={56} />
-          <span className="flex flex-col leading-tight">
+          <Logo height={48} />
+          {/* <span className="flex flex-col leading-tight">
             <span className="text-[1.05rem] font-extrabold tracking-wide text-white">
               {siteConfig.name}
             </span>
             <span className="text-[0.62rem] font-medium uppercase tracking-[0.16em] text-gold-light">
               Nigeria Electricity Supply Industry
             </span>
-          </span>
+          </span> */}
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Primary">
