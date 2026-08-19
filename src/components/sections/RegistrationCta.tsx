@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { siteConfig } from "@/data/site";
 
 export function RegistrationCta() {
   return (
@@ -37,7 +38,12 @@ export function RegistrationCta() {
             and grow.
           </p>
 
-          <Button href="/contact" variant="primary">
+          <Button
+            href={siteConfig.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+          >
             Register Today
           </Button>
         </Reveal>

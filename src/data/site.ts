@@ -12,6 +12,7 @@ export const siteConfig = {
   eventLocation: "Abuja, Nigeria",
   url: "https://www.nigeriaelectricityweek.com",
   organiser: "NESI Platform Limited",
+  registrationUrl: "https://accesspal.co/nesiweek",
 };
 
 export const contactInfo = {
@@ -53,7 +54,7 @@ export const navItems: NavItem[] = [
 ];
 
 export const footerCtaLinks: NavItem[] = [
-  { label: "Register Now", href: "/contact" },
+  { label: "Register Now", href: "/#register" },
   { label: "Partner With Us", href: "/contact" },
   // { label: "Join Innovation Challenge", href: "/contact" },
   { label: "Contact Us", href: "/contact" },

@@ -104,16 +104,21 @@ export function SiteFooter() {
               Navigate
             </p>
             <ul className="mt-4 space-y-3 text-sm">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-white/75 transition-colors hover:text-gold"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {navItems.map((item) => {
+                const isExternal = item.href.startsWith("http");
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      className="text-white/75 transition-colors hover:text-gold"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -122,16 +127,21 @@ export function SiteFooter() {
               Get Involved
             </p>
             <ul className="mt-4 space-y-3 text-sm">
-              {footerCtaLinks.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-white/75 transition-colors hover:text-gold"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {footerCtaLinks.map((item) => {
+                const isExternal = item.href.startsWith("http");
+                return (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      className="text-white/75 transition-colors hover:text-gold"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

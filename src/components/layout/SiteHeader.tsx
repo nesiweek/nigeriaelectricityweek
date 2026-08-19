@@ -51,12 +51,15 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Primary">
           {navItems.map((item) => {
+            const isExternal = item.href.startsWith("http");
             const isActive =
-              !item.href.includes("#") && pathname === item.href;
+              !isExternal && !item.href.includes("#") && pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
                 className={cn(
                   "group relative py-1.5 text-sm font-medium transition-colors",
                   isActive ? "text-white" : "text-white/80 hover:text-white",
@@ -76,7 +79,9 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-4">
           <Button
-            href="/contact"
+            href={siteConfig.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             variant="primary"
             className="hidden lg:inline-flex"
           >
@@ -117,21 +122,32 @@ export function SiteHeader() {
           className="px-page flex flex-col gap-1 bg-navy pb-6 pt-4 lg:hidden"
           aria-label="Mobile"
         >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "rounded-md px-3 py-3 text-sm font-semibold",
-                !item.href.includes("#") && pathname === item.href
-                  ? "bg-white/10 text-white"
-                  : "text-white/80",
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Button href="/contact" variant="primary" className="mt-2 w-full">
+          {navItems.map((item) => {
+            const isExternal = item.href.startsWith("http");
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className={cn(
+                  "rounded-md px-3 py-3 text-sm font-semibold",
+                  !isExternal && !item.href.includes("#") && pathname === item.href
+                    ? "bg-white/10 text-white"
+                    : "text-white/80",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+          <Button
+            href={siteConfig.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+            className="mt-2 w-full"
+          >
             Register Interest
           </Button>
         </nav>

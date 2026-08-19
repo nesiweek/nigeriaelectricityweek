@@ -83,7 +83,12 @@ export function Hero() {
         </div>
 
         <div className="mt-[clamp(24px,4vh,44px)] flex flex-wrap items-center gap-4">
-          <Button href="/contact" variant="primary">
+          <Button
+            href={siteConfig.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+          >
             Register Now
           </Button>
           <Button href="/contact" variant="outline">
