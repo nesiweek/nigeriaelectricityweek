@@ -91,8 +91,15 @@ export function Hero() {
           >
             Register Now
           </Button>
-          <Button href="/contact" variant="outline">
+          {/* <Button href="/contact" variant="outline">
             Become a Partner
+          </Button> */}
+          <Button
+            href="/downloads/Concept-Note-NESI-WEEK-2026.pdf"
+            variant="outline"
+            download
+          >
+            Download Concept Note
           </Button>
         </div>
       </div>
