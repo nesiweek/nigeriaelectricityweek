@@ -29,7 +29,8 @@ export function ExhibitorInfo() {
           <Reveal className="grid gap-4 lg:sticky lg:top-28">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]">
               <Image
-                src="/images/exhibition/exhibition.jpg"
+
+                src="/images/hero/exhibition-booth.png"
                 alt="Exhibitor showcasing technology to attendees at NESI Week"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -48,7 +49,7 @@ export function ExhibitorInfo() {
 
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]">
               <Image
-                src="/images/exhibition/exhibition2.jpg"
+                src="/images/exhibition/exhibition.jpg"
                 alt="Exhibitors and attendees networking at NESI Week"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"

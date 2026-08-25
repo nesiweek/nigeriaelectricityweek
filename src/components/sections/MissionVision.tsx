@@ -9,7 +9,7 @@ export function MissionVision() {
         <Reveal>
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]">
             <Image
-              src="/images/hero/american-public-power-association-VuR4oHZ3ucc-unsplash.jpg"
+              src="/images/hero/dealroom.png"
               alt="Electricity substation infrastructure"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"

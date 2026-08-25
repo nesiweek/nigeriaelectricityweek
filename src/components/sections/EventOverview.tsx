@@ -38,7 +38,7 @@ export function EventOverview() {
           className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]"
         >
           <Image
-            src="/images/hero/Cover_electricite.jpg"
+            src="/images/hero/nesiweek-image.png"
             alt="Electricity substation infrastructure"
             fill
             loading="eager"

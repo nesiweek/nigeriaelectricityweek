@@ -8,7 +8,7 @@ export function AboutStory() {
       <Container className="grid items-center gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[0.95fr_1.05fr]">
         <Reveal className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_40px_70px_-35px_rgba(16,42,67,0.5)]">
           <Image
-            src="/images/hero/nikola-johnny-mirkovic-Z_dnvde5wxc-unsplash.jpg"
+            src="/images/hero/nesi-platform.png"
             alt="High-voltage transmission towers at sunset"
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"

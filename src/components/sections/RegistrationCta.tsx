@@ -11,7 +11,7 @@ export function RegistrationCta() {
       className="relative scroll-mt-24 overflow-hidden py-[clamp(4rem,7vw,6rem)] text-center text-white sm:scroll-mt-28"
     >
       <Image
-        src="/images/hero/nikola-johnny-mirkovic-Z_dnvde5wxc-unsplash.jpg"
+        src="/images/hero/Event.png"
         alt=""
         fill
         sizes="100vw"
