@@ -64,7 +64,7 @@ export function PartnerSponsorship() {
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button
-                  href="/downloads/Sponsorship-Brochure-NESI-WEEK-2026-V2.pdf"
+                  href="/downloads/Sponsorship-Brochure-NESIWEEK-2026.pdf"
                   variant="outline"
                   className="border-white/25 text-white hover:border-white hover:bg-white/10 sm:flex-1"
                   download
