@@ -85,7 +85,7 @@ export function ExhibitorInfo() {
 
         <Reveal delay={320} className="mt-10 text-center">
           <Button
-            href="/contact?subject=Exhibitor+Registration"
+            href="https://accesspal.co/nesi-week-exhibitors"
             variant="primary"
           >
             Register as an Exhibitor
