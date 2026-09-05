@@ -1,9 +1,6 @@
 import type { Experience } from "@/lib/types";
 
-// NOTE: national-energy-dialogue, nesi-expo, nesi-games, future-energy-experience,
-// innovation-arena and power-concert don't have a dedicated photo yet — temporarily
-// reusing other hero/experience shots (chosen to minimise repeats) until real images
-// are added to /images/experiences.
+
 export const featuredExperiences: Experience[] = [
   {
     slug: "national-energy-dialogue",
@@ -11,7 +8,7 @@ export const featuredExperiences: Experience[] = [
     description:
       "High-level policy conversations shaping Nigeria's electricity future.",
     status: "coming-soon",
-    image: "/images/hero/nikola-johnny-mirkovic-Z_dnvde5wxc-unsplash.jpg",
+    image: "/images/experiences/national-dialogue.png",
   },
   {
     slug: "ceo-policy-forum",
@@ -24,16 +21,19 @@ export const featuredExperiences: Experience[] = [
   {
     slug: "nesi-expo",
     title: "NESI Expo",
-    description: "Nigeria's largest electricity and energy exhibition.",
-    status: "coming-soon",
-    image: "/images/hero/Cover_electricite.jpg",
+    description: "Put your brand where the industry is looking. Exhibit: ",
+    bullets: ["Products", "Services", "Technologies", "Energy Solutions", "Innovations"],
+    ctaLabel: "Register here",
+    ctaHref: "https://accesspal.co/nesi-week-exhibitors",
+    status: "Register Now",
+    image: "/images/experiences/nesi-expo.png",
   },
   {
     slug: "innovation-challenge",
     title: "NESI Innovation Challenge",
     description: "Discover the next generation of energy innovators.",
     status: "coming-soon",
-    image: "/images/experiences/innovation.jpg",
+    image: "/images/experiences/nesi-innovation.png",
   },
   {
     slug: "power-league",
@@ -45,31 +45,40 @@ export const featuredExperiences: Experience[] = [
   {
     slug: "energy-marathon",
     title: "NESI Energy Marathon",
-    description: "Run. Connect. Inspire.",
-    status: "coming-soon",
-    image: "/images/experiences/marathon.jpg",
+    description: "Run. Walk. Power On. ",
+    bullets: [
+      "10KM Run — Competitive Race",
+      "5KM Run — Fun Run/Walk",
+      "2KM Power Walk — Family & Wellness",
+    ],
+    ctaLabel: "Register Here",
+    ctaHref: "https://docs.google.com/forms/d/e/1FAIpQLSelJIrb5a_LAjGYsjA7FIKmi2VOZ8mLIYP0F92OYfxpqnb3GA/viewform",
+    status: "Register Now",
+    image: "/images/experiences/nesi-marathon.png",
   },
   {
     slug: "dinner-with-nesi",
     title: "Dinner with NESI",
     description: "Executive networking with industry leaders.",
     status: "coming-soon",
-    image: "/images/experiences/dinner.jpg",
+    image: "/images/experiences/nesi-dinner.png",
   },
   {
     slug: "nesi-awards",
     title: "NESI Awards",
     description: "Celebrating excellence across the electricity ecosystem.",
     status: "coming-soon",
-    image: "/images/experiences/awards.jpg",
+    image: "/images/experiences/nesi-awards.png",
   },
   {
     slug: "nesi-games",
     title: "NESI Games",
-    description:
-      "Where Energy Meets Sport. Bringing the energy ecosystem together through the NESI Power League, NESI Energy Marathon and other sporting experiences that promote wellness, teamwork and industry collaboration.",
-    status: "coming-soon",
-    image: "/images/experiences/games.jpg",
+    description: "Get your organisation ready for NESI Games 2026",
+    bullets: ["Register your organisation", "Choose your sport", "Bring your team"],
+    ctaLabel: "Register Here",
+    ctaHref: "https://docs.google.com/forms/d/e/1FAIpQLSftqc8x3B0Pu8RxdGH4CG8mLL8UT6jo8LQjh1fBpWjrv_RbmQ/viewform",
+    status: "Register Now",
+    image: "/images/experiences/nesi-games.png",
   },
   {
     slug: "future-energy-experience",

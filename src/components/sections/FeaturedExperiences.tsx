@@ -115,10 +115,38 @@ export function FeaturedExperiences() {
                         <p className="mt-1.5 text-[0.68rem] font-light leading-[1.5] text-white/85 sm:mt-2.5 sm:text-[0.85rem]">
                           {experience.description}
                         </p>
+
+                        {experience.bullets && (
+                          <ul className="mt-2 space-y-1 sm:mt-3">
+                            {experience.bullets.map((item) => (
+                              <li
+                                key={item}
+                                className="flex items-start gap-1.5 text-[0.62rem] font-medium text-white/80 sm:text-[0.75rem]"
+                              >
+                                <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-gold" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
-                      {experience.status === "coming-soon" && (
-                        <ComingSoonBadge />
-                      )}
+
+                      <div>
+                        {experience.ctaHref && (
+                          <a
+                            href={experience.ctaHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="mb-2 inline-block w-full rounded-full bg-gold px-3 py-1.5 text-center text-[0.62rem] font-extrabold uppercase tracking-wide text-navy transition-colors hover:bg-gold-light sm:text-[0.7rem]"
+                          >
+                            {experience.ctaLabel ?? "Register Now"}
+                          </a>
+                        )}
+                        {experience.status === "coming-soon" && (
+                          <ComingSoonBadge />
+                        )}
+                      </div>
                     </div>
                   </div>
                 </button>

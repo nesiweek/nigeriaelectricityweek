@@ -12,8 +12,12 @@ export type Experience = {
   slug: string;
   title: string;
   description: string;
-  status: "coming-soon" | "live";
+  bullets?: string[];
+  ctaLabel?: string;
+  ctaHref?: string;
+  // status: "coming-soon" | "Register Now" | "";
   image: string;
+  status: string;
 };
 
 export type NewsItem = {
