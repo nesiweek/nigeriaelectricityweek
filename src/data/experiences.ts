@@ -76,7 +76,7 @@ export const featuredExperiences: Experience[] = [
     description: "Get your organisation ready for NESI Games 2026",
     bullets: ["Register your organisation", "Choose your sport", "Bring your team"],
     ctaLabel: "Register Here",
-    ctaHref: "https://docs.google.com/forms/d/e/1FAIpQLSftqc8x3B0Pu8RxdGH4CG8mLL8UT6jo8LQjh1fBpWjrv_RbmQ/viewform",
+    ctaHref: "https://accesspal.co/nesi-games",
     status: "Register Now",
     image: "/images/experiences/nesi-games.png",
   },
