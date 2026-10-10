@@ -10,6 +10,7 @@ import { RegistrationCta } from "@/components/sections/RegistrationCta";
 import { PartnersMarquee } from "@/components/sections/PartnersMarquee";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { contactInfo, siteConfig } from "@/data/site";
+import { TopInnovators } from "@/components/sections/TopInnovators";
 
 const eventJsonLd = {
   "@context": "https://schema.org",
@@ -48,9 +49,10 @@ export default function HomePage() {
       <Hero />
       <AboutMission />
       <EventStats />
-     <EventOverview />
+      <EventOverview />
       <WhyAttend />
       <FeaturedExperiences />
+      <TopInnovators />
       <WhyPartner />
       <PartnerSponsorship />
       <RegistrationCta />
