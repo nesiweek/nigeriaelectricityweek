@@ -105,13 +105,13 @@ export const featuredExperiences: Experience[] = [
     image: "/images/experiences/concert.jpg",
   },
   {
-    slug: "nesi-got-talent",
-    title: "NESI Got Talent",
-    description: "POWERING TALENT. POWERING THE FUTURE. ",
-    bullets: ["Featuring Music, Dance, Comedy,Special Talent, Performance", "Grand Champion - ₦5,000,000", "First Runner-Up - ₦3,000,000", "Second Runner-Up - ₦2,000,000", "Registration opens 20 September – 20 October 2026."],
+    slug: "nesi-power-stage",
+    title: "NESI Power Stage",
+    description: "WHERE TALENT TAKES POWER ",
+    bullets: ["Featuring Music, Dance, Comedy,Special Talent, Performance", "Grand Champion - ₦3,000,000", "First Runner-Up - ₦2,000,000", "Second Runner-Up - ₦1,000,000", "Registration opens 20 September – 20 October 2026."],
     ctaLabel: "Register Here",
     ctaHref: "https://forms.gle/GfU9ZBeTfPLpWcWAA",
     status: "Register Now",
-    image: "/images/experiences/nesi-gottalent.png",
+    image: "/images/experiences/nesi-power-stage.png",
   },
 ];
