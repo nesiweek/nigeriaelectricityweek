@@ -9,7 +9,7 @@ export const siteConfig = {
     "Nigeria's premier annual electricity and energy ecosystem platform bringing together policymakers, regulators, utilities, investors, technology providers, innovators, development partners and consumers to shape the future of the Nigerian Electricity Supply Industry.",
   motto: "One Ecosystem. One Platform. One Future.",
   eventDates: "15–22 November 2026",
-  eventLocation: "Abuja, Nigeria",
+  eventLocation: "Velodrome, National Stadium, Abuja",
   url: "https://www.nigeriaelectricityweek.com",
   organiser: "NESI Platform Limited",
   registrationUrl: "https://accesspal.co/nesiweek",

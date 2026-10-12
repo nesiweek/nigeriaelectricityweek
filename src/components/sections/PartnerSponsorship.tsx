@@ -28,7 +28,7 @@ export function PartnerSponsorship() {
               <h3 className="mb-6 text-xl font-bold text-white">
                 Founding Partners of NESI Week 2026
               </h3>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-4 gap-3">
                 {foundingSponsors.map((sponsor) => (
                   <div
                     key={sponsor.src}

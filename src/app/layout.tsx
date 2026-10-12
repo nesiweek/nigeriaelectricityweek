@@ -11,7 +11,7 @@ const inter = Inter({
 
 const title = "NESI Week 2026 | Powering the Future";
 const description =
-  "Nigeria Electricity Week (NESI Week) 2026 — 15–22 November, Abuja, Nigeria.";
+  "Nigeria Electricity Week (NESI Week) 2026 — 15–22 November | Velodrome, National Stadium, Abuja.";
 const ogImage = "/images/hero/Cover_electricite.jpg";
 
 export const metadata: Metadata = {
