@@ -83,14 +83,54 @@ export function ExhibitorInfo() {
           </div>
         </div>
 
-        <Reveal delay={320} className="mt-10 text-center">
-          <Button
-            href="https://accesspal.co/nesi-week-exhibitors"
-            variant="primary"
-          >
-            Register as an Exhibitor
-          </Button>
+
+
+        <Reveal delay={320} className="mt-10">
+          <div className="mx-auto flex max-w-2xl flex-col items-center justify-center gap-8 rounded-2xl  bg-slate-50 p-6 sm:flex-row sm:gap-10 sm:p-8">
+            {/* QR Code */}
+            <div className="flex shrink-0 flex-col items-center rounded-xl bg-white p-4 shadow-sm">
+              <p className="mb-3 text-center text-xs font-bold uppercase tracking-wider text-navy">
+                Scan to Register
+              </p>
+
+              <Image
+                src="/images/qr-code.jpeg"
+                alt="QR code to register as a NESI Week exhibitor"
+                width={140}
+                height={140}
+                className="h-32 w-32 object-contain sm:h-36 sm:w-36"
+              />
+
+
+            </div>
+
+            {/* Registration Information */}
+            <div className="text-center sm:text-left">
+              <h3 className="text-xl font-bold tracking-tight text-navy sm:text-2xl">
+                Ready to Exhibit at NESI Week?
+              </h3>
+
+              <p className="mt-3 max-w-sm text-sm leading-7 text-slate-600 sm:text-base">
+                Secure your place at Nigeria&apos;s premier electricity and
+                energy industry gathering. Register to showcase your
+                solutions and connect with key industry stakeholders.
+              </p>
+
+              <div className="mt-5">
+                <Button
+                  href="https://accesspal.co/nesi-week-exhibitors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
+                >
+                  Register as an Exhibitor
+                </Button>
+              </div>
+            </div>
+          </div>
         </Reveal>
+
+
       </Container>
     </section>
   );
