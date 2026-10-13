@@ -11,6 +11,7 @@ import { PartnersMarquee } from "@/components/sections/PartnersMarquee";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { contactInfo, siteConfig } from "@/data/site";
 import { TopInnovators } from "@/components/sections/TopInnovators";
+import { Speakers } from "@/components/sections/Speakers";
 
 const eventJsonLd = {
   "@context": "https://schema.org",
@@ -51,6 +52,7 @@ export default function HomePage() {
       <EventStats />
       <EventOverview />
       <WhyAttend />
+      <Speakers />
       <FeaturedExperiences />
       <TopInnovators />
       <WhyPartner />
