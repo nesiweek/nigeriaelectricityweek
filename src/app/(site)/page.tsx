@@ -11,6 +11,7 @@ import { PartnersMarquee } from "@/components/sections/PartnersMarquee";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { contactInfo, siteConfig } from "@/data/site";
 import { TopInnovators } from "@/components/sections/TopInnovators";
+import { TopNominees } from "@/components/sections/TopNominees";
 import { Speakers } from "@/components/sections/Speakers";
 
 const eventJsonLd = {
@@ -55,6 +56,7 @@ export default function HomePage() {
       <Speakers />
       <FeaturedExperiences />
       <TopInnovators />
+      <TopNominees />
       <WhyPartner />
       <PartnerSponsorship />
       <RegistrationCta />
