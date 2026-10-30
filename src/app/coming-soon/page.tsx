@@ -5,7 +5,7 @@ import Countdown from "@/components/Countdown";
 export const metadata: Metadata = {
   title: "NESI Week 2026 | Coming Soon",
   description:
-    "Nigeria Electricity Week (NESI Week) 2026 — 15–22 November, Abuja, Nigeria.",
+    "Nigeria Electricity Week (NESI Week) 2026 — 13–20 December, Abuja, Nigeria.",
 };
 
 export default function ComingSoonPage() {
@@ -90,7 +90,7 @@ export default function ComingSoonPage() {
           </div>
 
           <div className="flex flex-col items-center gap-2 text-sm font-semibold tracking-[0.03em] text-gold [animation:fade-up_0.7s_ease_0.32s_both] sm:flex-row sm:justify-center sm:gap-3">
-            <span>15–22 November 2026</span>
+            <span>13–20 December 2026</span>
             <span className="hidden h-1 w-1 rounded-full bg-white/30 sm:block" />
             <span>Abuja, Nigeria</span>
           </div>

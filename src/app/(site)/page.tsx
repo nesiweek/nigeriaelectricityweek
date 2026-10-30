@@ -13,6 +13,7 @@ import { contactInfo, siteConfig } from "@/data/site";
 import { TopInnovators } from "@/components/sections/TopInnovators";
 import { TopNominees } from "@/components/sections/TopNominees";
 import { Speakers } from "@/components/sections/Speakers";
+import { EventUpdateModal } from "@/components/sections/EventUpdateModal";
 
 const eventJsonLd = {
   "@context": "https://schema.org",
@@ -44,6 +45,7 @@ const eventJsonLd = {
 export default function HomePage() {
   return (
     <>
+      <EventUpdateModal />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
