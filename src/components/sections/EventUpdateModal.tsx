@@ -118,8 +118,7 @@ export function EventUpdateModal() {
                             </p>
 
                             <p>
-                                We wish to inform you that NESI WEEK (Nigeria Electricity
-                                Week) 2026, the National Energy, Sustainability & Innovation
+                                We wish to inform you that NESI WEEK (Nigeria Electricity Supply Industry) 2026, the National Energy, Sustainability & Innovation
                                 Week, has been rescheduled from its previously announced
                                 dates of 15–22 November 2026 to 13–20 December 2026 in Abuja,
                                 Nigeria.
