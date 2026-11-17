@@ -114,4 +114,20 @@ export const featuredExperiences: Experience[] = [
     status: "Register Now",
     image: "/images/experiences/nesi-power-stage.png",
   },
+  {
+    slug: "investment-deal-room",
+    title: "NESI Investment Deal Room",
+    description: "Connect your electricity or energy project with banks, development finance institutions, investment funds and potential capital providers.",
+    bullets: [
+      "Up to 10 selected projects will pitch to potential investors",
+      "Access scheduled one-on-one investor meetings during NESI Week",
+      "90-day post-event investor engagement and follow-up support",
+      " Applications open : 17–27 November 2026"
+
+    ],
+    ctaLabel: "Register Here",
+    ctaHref: "https://docs.google.com/forms/d/e/1FAIpQLSfakhorvQqdElE47yiE1Y4bfZJxVmh0f9jSpIPX-GHFxTWK-A/viewform",
+    status: "Register Now",
+    image: "/images/hero/dealroom.png",
+  },
 ];
