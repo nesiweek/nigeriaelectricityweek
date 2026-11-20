@@ -8,40 +8,105 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const nomineeSlides = [
     {
-        src: "/images/nominees/top-nominees.jpeg",
+        src: "/images/nominees/1.jpeg",
         alt: "NESI Awards top nominees ",
         label: "Top nominees",
     },
     {
-        src: "/images/nominees/customer.jpeg",
+        src: "/images/nominees/2.jpeg",
         alt: "NESI Awards for Customer, Renewables and Energy Transition",
         label: "Customer, Renewables and Energy Transition",
     },
     {
-        src: "/images/nominees/distribution.jpeg",
+        src: "/images/nominees/3.jpeg",
         alt: "NESI Awards for Distribution and Customer",
         label: "Distribution and Customer",
     },
     {
-        src: "/images/nominees/generation.jpeg",
+        src: "/images/nominees/4.jpeg",
         alt: "NESI Awards for Generation",
         label: "Generation",
     },
     {
-        src: "/images/nominees/innovation.jpeg",
+        src: "/images/nominees/5.jpeg",
         alt: "NESI Awards for innovation, Technology and Investment",
         label: "Innovation, Technology and Investment",
     },
     {
-        src: "/images/nominees/leadership.jpeg",
+        src: "/images/nominees/6.jpeg",
         alt: "NESI Awards for Leadership and People",
         label: "Leadership and people",
     },
     {
-        src: "/images/nominees/transmission.jpeg",
+        src: "/images/nominees/7.jpeg",
         alt: "NESI Awards for Transmission and Market",
         label: "Transmission and market",
     },
+    {
+        src: "/images/nominees/8.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/9.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/10.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/11.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/12.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/13.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/14.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/15.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/16.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/17.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/18.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/19.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    },
+    {
+        src: "/images/nominees/20.jpeg",
+        alt: "NESI Awards for Transmission and Market",
+        label: "Transmission and market",
+    }
 ];
 
 const lastIndex = nomineeSlides.length - 1;
