@@ -41,4 +41,16 @@ export const speakers = [
             "Acting MD/CEO, Ikeja Electric",
         image: "/images/speakers/Ogochukwu.jpeg",
     },
+    {
+        title: "Caroline Eboumbou",
+        description:
+            "CEO, All On",
+        image: "/images/speakers/caroline.jpeg",
+    },
+    {
+        title: "Chief Sunday Oduntan",
+        description:
+            "MD/CEO, Association of Nigerian Electricity Distributors (ANED)",
+        image: "/images/speakers/Sunday.jpeg",
+    },
 ]
