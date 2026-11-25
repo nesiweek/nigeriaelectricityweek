@@ -51,6 +51,6 @@ export const speakers = [
         title: "Chief Sunday Oduntan",
         description:
             "MD/CEO, Association of Nigerian Electricity Distributors (ANED)",
-        image: "/images/speakers/Sunday.jpeg",
+        image: "/images/speakers/sunday.jpeg",
     },
 ]
